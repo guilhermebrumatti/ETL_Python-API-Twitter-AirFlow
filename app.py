@@ -3,9 +3,12 @@ import pandas as pd
 import sqlite3
 import tweepy as tw
 from datetime import datetime
-from airflow import DAG
 from datetime import datetime
+
+import pendulum
 from airflow.operators.python import PythonOperator
+from airflow import DAG, Dataset
+from airflow.operators.bash import BashOperator
 
 def raspa_twitter():
     # Adicionando credenciais como variáveis
@@ -53,12 +56,9 @@ def raspa_twitter():
     df2.to_excel("conteudo_do_bd.xlsx")
     conn.close()
 
-with DAG('dag_twitter', start_date = datetime(2022,10,6),
-        scheduler_interval = '30 * * * *', catchup=False) as dag:
+with DAG(dag_id='dag_twitter',catchup=False,start_date=datetime(2022, 10, 7, tz="UTC"),schedule='@daily') as dag1:
+    # [START task_outlet]
+    varBash = BashOperator(task_id='producing_task_1', bash_command="sleep 5")
+    # [END task_outlet]
 
-    raspa_twitter = PythonOperator(
-    task_id = 'raspa_twitter',
-    python_callable = raspa_twitter
-)
-
-raspa_twitter
+varBash >> raspa_twitter()
