@@ -8,7 +8,7 @@ Cada resultado é armazenado no sqlite diariamente, para futuras consultas.
 
 Todo esse processo é repetido diariamente utilizando o Airflow.
 
-Requerimentos:
-pip install pandas
-pip install sqlite3
-pip install tweepy
+Requerimentos:<br>
+pip install pandas<br>
+pip install sqlite3<br>
+pip install tweepy<br>
