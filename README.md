@@ -7,3 +7,8 @@ A ideia é buscar diariamente, tweets sobre determinado assunto(neste exemplo s�
 Cada resultado é armazenado no sqlite diariamente, para futuras consultas.
 
 Todo esse processo é repetido diariamente utilizando o Airflow.
+
+Requerimentos:
+pip install pandas
+pip install sqlite3
+pip install tweepy
