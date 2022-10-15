@@ -12,11 +12,11 @@ from airflow.operators.bash import BashOperator
 
 def raspa_twitter():
     # Adicionando credenciais como variáveis
-    consumer_key = 'tsOVyU3c9eeKmAP5DipQ8gYEb'
-    consumer_secret = 'kTzLs8CQejnl7bZfGnJ3ApmCferAA1bZSUAuTVRMOWcQ0Wi4Mk'
-    bearer_token = 'AAAAAAAAAAAAAAAAAAAAAJoxhwEAAAAABEdWYphbPwesuE%2FGIOvV1J6Poh0%3D5cLWk6g7aBohPqlKjXSxr38E4gbLP7IgUBZjlyVRHGDF8q1b3n'
-    access_token = '230702818-x908uZ4iVh6rTRS7hy4wHGp7Jvl8GZcpgJ91CcyD'
-    access_token_secret = 'iIZ762bnM2xtWoZNpxRn0oLFnSKnfZ3V37mifSmgXGFvu'
+    consumer_key = 'SUA KEY'
+    consumer_secret = 'SEU SECRET'
+    bearer_token = 'SEU BEAR TOKEN'
+    access_token = 'SEU ACCESS TOKEN'
+    access_token_secret = 'SEU ACCESS TOKEN SECRET'
 
     # Criando client
     cliente = tw.Client(bearer_token, consumer_key, consumer_secret, access_token, access_token_secret)
